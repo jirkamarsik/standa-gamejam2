@@ -1,6 +1,6 @@
 ;LINKFILTER = New = 1
 ;LINK = "1xGMTvL1wKiLZFQFaWuvpRSyWzX3ryqg6AQYXk_Ma6qc"
-LINK = Karty-fixed.csv
+LINK = Karty - List 1 - fixed.csv
 
 ; Obecny nastaveni
 UNIT = MM
