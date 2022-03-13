@@ -57,7 +57,7 @@ HTMLFONT=odmena,DejaVu Sans,12,,#000000,RIGHT
 HTMLTEXT="1-{(ODMENA)}",[ODMENA],{2300/469}%,{59400/655}%,{42600/469}%,{4600/655}%,#FFFFFF,0,,100,odmena
 ENDVISUAL
 
-ELSEIF = [TYP] = "budova - zakladni"
+ELSEIF = [TYP] = "budova - z&#225;kladn&#237;"
 
 VISUAL=, 10, 10
 ;nazev-rect
@@ -70,12 +70,6 @@ HTMLTEXT="1-{(NAZEV)}",[NAZEV],{800/469}%,{1100/655}%,{33500/469}%,{5000/655}%,#
 HTMLFONT=typ,DejaVu Sans,10,,#000000,CENTER
 ;typ
 HTMLTEXT="1-{(TYP)}",[TYP],{500/469}%,{5000/655}%,{34000/469}%,{3900/655}%,#FFFFFF,0,,100,typ
-;cena-rect
-RECTANGLE=,{35400/469}%,0%,{11500/469}%,{9500/655}%,#000000,EMPTY,1
-;cena-font
-HTMLFONT=cena,DejaVu Sans,12,,#000000,LEFT
-;cena-font
-HTMLTEXT="1-{(CENA)}",[CENA],{37200/469}%,{2000/655}%,{8100/469}%,{6000/655}%,#FFFFFF,0,,100,cena
 ;efekt-rect
 RECTANGLE=,{-100/469}%,{36700/655}%,{47300/469}%,{21900/655}%,#000000,EMPTY,1
 ;efekt-font
@@ -85,7 +79,7 @@ HTMLTEXT="1-{(EFEKT)}",[EFEKT],{2100/469}%,{38000/655}%,{42600/469}%,{18800/655}
 ;vic-lidi-ikona
 ICON=,M,vic-lidi.png
 ;vic-lidi
-ICONS=,M,{900/469}%,{59300/655}%,{44500/469}%,{6100/655}%,5%,5%,0,,RIGHT
+ICONS=,M,{900/469}%,{58900/655}%,{44500/469}%,{6100/655}%,8,8,0,,LEFT
 ENDVISUAL
 
 ELSEIF = [TYP] = ""
