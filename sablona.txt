@@ -2,17 +2,22 @@
 ;LINK = "1xGMTvL1wKiLZFQFaWuvpRSyWzX3ryqg6AQYXk_Ma6qc"
 LINK = Karty - List 1 - fixed.csv
 
-; Obecny nastaveni
+; Obecny nastaveni.
 UNIT = MM
+; A4 stranka
 PAGE = 210, 297, PORTRAIT
+; Cerny okraje karet.
 BORDER = RECTANGLE, #000000, 2
+; Marginy takovy, aby se na 1 A4ku veslo 3x3 karet.
 MARGINS = 10, 10, 10, 10
+; Velikost MtG karet.
 CARDSIZE = 63, 88
 
-; Ikonky
+
+; Ikonky.
 HTMLIMAGE = , (b), bod.png, 5, 5, P
 
-; Obrazky
+; Vyber obrazek v zavislosti na typu karty.
 IF = "budova" @ [TYP]
 HTMLIMAGE = , (OBRAZEK), budova.png, 30, 30, P
 ELSEIF = "technologie" @ [TYP]
@@ -21,10 +26,13 @@ ELSEIF = "z&#225;kon" @ [TYP]
 HTMLIMAGE = , (OBRAZEK), zakon.png, 30, 30, P
 ENDIF
 
+
 IF = [TYP] = "voln&#225; parcela"
 
+; Na volnych parcelach je ikonka penizku 2x vetsi.
 HTMLIMAGE = , (p), penizek.png, 10, 10, P
 
+;; KARTY PARCEL
 VISUAL=, 10, 10
 ;font-nazev
 HTMLFONT=nazev,DejaVu Sans,24,,#000000,CENTER
@@ -38,10 +46,13 @@ ENDVISUAL
 
 ELSE
 
+; Na vsech kartach krom parcel ma ikonka penizku stejnou velikost jako ikonka bodu.
 HTMLIMAGE = , (p), penizek.png, 5, 5, P
+
 
 IF = ("technologie" @ [TYP]) _OR_ ("z&#225;kon" @ [TYP])
 
+;; TECHNOLOGIE A ZAKONY
 VISUAL=, 10, 10
 ;nazev-rect
 RECTANGLE=,{-100/469}%,0%,{35600/469}%,{9500/655}%,#000000,EMPTY,1
@@ -71,8 +82,10 @@ HTMLFONT=odmena,DejaVu Sans,12,,#000000,RIGHT
 HTMLTEXT="1-{(ODMENA)}",[ODMENA],{2300/469}%,{59400/655}%,{42600/469}%,{4600/655}%,#FFFFFF,0,,100,odmena
 ENDVISUAL
 
+
 ELSEIF = [TYP] = "budova - z&#225;kladn&#237;"
 
+;; ZAKLADNI BUDOVY
 VISUAL=, 10, 10
 ;nazev-rect
 RECTANGLE=,{-100/469}%,0%,{35600/469}%,{9500/655}%,#000000,EMPTY,1
@@ -100,8 +113,11 @@ ICON=,M,vic-lidi.png
 ICONS=,M,{900/469}%,{58900/655}%,{44500/469}%,{6100/655}%,8,8,0,,LEFT
 ENDVISUAL
 
+
 ELSEIF = [TYP] = ""
 
+;; KONEC KOLA A JINE SPECIAL KARTY
+VISUAL=, 10, 10
 ;nazev-rect
 RECTANGLE=,{-100/469}%,0%,{35600/469}%,{9500/655}%,#000000,EMPTY,1
 ;nazev-font
@@ -114,9 +130,12 @@ RECTANGLE=,{-100/469}%,{36700/655}%,{47300/469}%,{21900/655}%,#000000,EMPTY,1
 HTMLFONT=efekt,DejaVu Sans,10,,#000000,LEFT
 ;efekt
 HTMLTEXT="1-{(EFEKT)}",[EFEKT],{2100/469}%,{38000/655}%,{42600/469}%,{18800/655}%,#FFFFFF,0,,100,efekt
+ENDVISUAL
+
 
 ELSE
 
+;; BUDOVY
 VISUAL=, 10, 10
 ;nazev-rect
 RECTANGLE=,{-100/469}%,0%,{35600/469}%,{9500/655}%,#000000,EMPTY,1
