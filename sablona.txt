@@ -1,0 +1,145 @@
+;LINKFILTER = New = 1
+;LINK = "1xGMTvL1wKiLZFQFaWuvpRSyWzX3ryqg6AQYXk_Ma6qc"
+LINK = Karty-fixed.csv
+
+; Obecny nastaveni
+UNIT = MM
+PAGE = 210, 297, PORTRAIT
+BORDER = RECTANGLE, #000000, 2
+MARGINS = 10, 10, 10, 10
+CARDSIZE = 63, 88
+
+HTMLIMAGE = , (b), bod.png, 5, 5, P
+
+IF = [TYP] = "voln&#225; parcela"
+
+HTMLIMAGE = , (p), penizek.png, 10, 10, P
+
+VISUAL=, 10, 10
+;font-nazev
+HTMLFONT=nazev,DejaVu Sans,24,,#000000,CENTER
+;nazev
+HTMLTEXT="1-{(NAZEV)}",[NAZEV],{4600/469}%,{11700/655}%,{37600/469}%,{8400/655}%,#FFFFFF,0,,100,nazev
+;font-cena
+HTMLFONT=cena,DejaVu Sans,42,,#000000,CENTER
+;cena
+HTMLTEXT="1-{(CENA)}",[CENA],{12000/469}%,{44600/655}%,{22800/469}%,{20900/655}%,#FFFFFF,0,,100,cena
+ENDVISUAL
+
+ELSE
+
+HTMLIMAGE = , (p), penizek.png, 5, 5, P
+
+IF = ("technologie" @ [TYP]) _OR_ ("z&#225;kon" @ [TYP])
+
+VISUAL=, 10, 10
+;nazev-rect
+RECTANGLE=,{-100/469}%,0%,{35600/469}%,{9500/655}%,#000000,EMPTY,1
+;nazev-font
+HTMLFONT=nazev,DejaVu Sans,12,,#000000,CENTER
+;nazev
+HTMLTEXT="1-{(NAZEV)}",[NAZEV],{800/469}%,{1100/655}%,{33500/469}%,{5000/655}%,#FFFFFF,0,,100,nazev
+;typ-font
+HTMLFONT=typ,DejaVu Sans,10,,#000000,CENTER
+;typ
+HTMLTEXT="1-{(TYP)}",[TYP],{500/469}%,{5000/655}%,{34000/469}%,{3900/655}%,#FFFFFF,0,,100,typ
+;majitel-rect
+RECTANGLE=,{1500/469}%,{27900/655}%,{9000/469}%,{7400/655}%,#000000,EMPTY,0.5
+;efekt-rect
+RECTANGLE=,{-100/469}%,{36700/655}%,{47300/469}%,{21900/655}%,#000000,EMPTY,1
+;efekt-font
+HTMLFONT=efekt,DejaVu Sans,10,,#000000,LEFT
+;efekt
+HTMLTEXT="1-{(EFEKT)}",[EFEKT],{2100/469}%,{38000/655}%,{42600/469}%,{18800/655}%,#FFFFFF,0,,100,efekt
+;odmena-font
+HTMLFONT=odmena,DejaVu Sans,12,,#000000,RIGHT
+;odmena
+HTMLTEXT="1-{(ODMENA)}",[ODMENA],{2300/469}%,{59400/655}%,{42600/469}%,{4600/655}%,#FFFFFF,0,,100,odmena
+ENDVISUAL
+
+ELSEIF = [TYP] = "budova - zakladni"
+
+VISUAL=, 10, 10
+;nazev-rect
+RECTANGLE=,{-100/469}%,0%,{35600/469}%,{9500/655}%,#000000,EMPTY,1
+;nazev-font
+HTMLFONT=nazev,DejaVu Sans,12,,#000000,CENTER
+;nazev
+HTMLTEXT="1-{(NAZEV)}",[NAZEV],{800/469}%,{1100/655}%,{33500/469}%,{5000/655}%,#FFFFFF,0,,100,nazev
+;typ-font
+HTMLFONT=typ,DejaVu Sans,10,,#000000,CENTER
+;typ
+HTMLTEXT="1-{(TYP)}",[TYP],{500/469}%,{5000/655}%,{34000/469}%,{3900/655}%,#FFFFFF,0,,100,typ
+;cena-rect
+RECTANGLE=,{35400/469}%,0%,{11500/469}%,{9500/655}%,#000000,EMPTY,1
+;cena-font
+HTMLFONT=cena,DejaVu Sans,12,,#000000,LEFT
+;cena-font
+HTMLTEXT="1-{(CENA)}",[CENA],{37200/469}%,{2000/655}%,{8100/469}%,{6000/655}%,#FFFFFF,0,,100,cena
+;efekt-rect
+RECTANGLE=,{-100/469}%,{36700/655}%,{47300/469}%,{21900/655}%,#000000,EMPTY,1
+;efekt-font
+HTMLFONT=efekt,DejaVu Sans,10,,#000000,LEFT
+;efekt
+HTMLTEXT="1-{(EFEKT)}",[EFEKT],{2100/469}%,{38000/655}%,{42600/469}%,{18800/655}%,#FFFFFF,0,,100,efekt
+;vic-lidi-ikona
+ICON=,M,vic-lidi.png
+;vic-lidi
+ICONS=,M,{900/469}%,{59300/655}%,{44500/469}%,{6100/655}%,5%,5%,0,,RIGHT
+ENDVISUAL
+
+ELSEIF = [TYP] = ""
+
+;nazev-rect
+RECTANGLE=,{-100/469}%,0%,{35600/469}%,{9500/655}%,#000000,EMPTY,1
+;nazev-font
+HTMLFONT=nazev,DejaVu Sans,12,,#000000,CENTER
+;nazev
+HTMLTEXT="1-{(NAZEV)}",[NAZEV],{800/469}%,{1100/655}%,{33500/469}%,{5000/655}%,#FFFFFF,0,,100,nazev
+;efekt-rect
+RECTANGLE=,{-100/469}%,{36700/655}%,{47300/469}%,{21900/655}%,#000000,EMPTY,1
+;efekt-font
+HTMLFONT=efekt,DejaVu Sans,10,,#000000,LEFT
+;efekt
+HTMLTEXT="1-{(EFEKT)}",[EFEKT],{2100/469}%,{38000/655}%,{42600/469}%,{18800/655}%,#FFFFFF,0,,100,efekt
+
+ELSE
+
+VISUAL=, 10, 10
+;nazev-rect
+RECTANGLE=,{-100/469}%,0%,{35600/469}%,{9500/655}%,#000000,EMPTY,1
+;nazev-font
+HTMLFONT=nazev,DejaVu Sans,12,,#000000,CENTER
+;nazev
+HTMLTEXT="1-{(NAZEV)}",[NAZEV],{800/469}%,{1100/655}%,{33500/469}%,{5000/655}%,#FFFFFF,0,,100,nazev
+;typ-font
+HTMLFONT=typ,DejaVu Sans,10,,#000000,CENTER
+;typ
+HTMLTEXT="1-{(TYP)}",[TYP],{500/469}%,{5000/655}%,{34000/469}%,{3900/655}%,#FFFFFF,0,,100,typ
+;cena-rect
+RECTANGLE=,{35400/469}%,0%,{11500/469}%,{9500/655}%,#000000,EMPTY,1
+;cena-font
+HTMLFONT=cena,DejaVu Sans,12,,#000000,LEFT
+;cena-font
+HTMLTEXT="1-{(CENA)}",[CENA],{37200/469}%,{2000/655}%,{8100/469}%,{6000/655}%,#FFFFFF,0,,100,cena
+;majitel-rect
+RECTANGLE=,{1500/469}%,{27900/655}%,{9000/469}%,{7400/655}%,#000000,EMPTY,0.5
+;majitel-font
+HTMLFONT=majitel,DejaVu Sans,10,,#000000,LEFT
+;majitel
+HTMLTEXT="1-{(MAJITEL)}",[MAJITEL],{12600/469}%,{29100/655}%,{33100/469}%,{5300/655}%,#FFFFFF,0,,100,majitel
+;efekt-rect
+RECTANGLE=,{-100/469}%,{36700/655}%,{47300/469}%,{21900/655}%,#000000,EMPTY,1
+;efekt-font
+HTMLFONT=efekt,DejaVu Sans,10,,#000000,LEFT
+;efekt
+HTMLTEXT="1-{(EFEKT)}",[EFEKT],{2100/469}%,{38000/655}%,{42600/469}%,{18800/655}%,#FFFFFF,0,,100,efekt
+;odmena-font
+HTMLFONT=odmena,DejaVu Sans,12,,#000000,RIGHT
+;odmena
+HTMLTEXT="1-{(ODMENA)}",[ODMENA],{2300/469}%,{59400/655}%,{42600/469}%,{4600/655}%,#FFFFFF,0,,100,odmena
+ENDVISUAL
+
+ENDIF
+
+ENDIF
