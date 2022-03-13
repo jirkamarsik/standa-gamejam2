@@ -9,7 +9,17 @@ BORDER = RECTANGLE, #000000, 2
 MARGINS = 10, 10, 10, 10
 CARDSIZE = 63, 88
 
+; Ikonky
 HTMLIMAGE = , (b), bod.png, 5, 5, P
+
+; Obrazky
+IF = "budova" @ [TYP]
+HTMLIMAGE = , (OBRAZEK), budova.png, 30, 30, P
+ELSEIF = "technologie" @ [TYP]
+HTMLIMAGE = , (OBRAZEK), technologie.png, 30, 30, P
+ELSEIF = "z&#225;kon" @ [TYP]
+HTMLIMAGE = , (OBRAZEK), zakon.png, 30, 30, P
+ENDIF
 
 IF = [TYP] = "voln&#225; parcela"
 
@@ -43,6 +53,10 @@ HTMLTEXT="1-{(NAZEV)}",[NAZEV],{800/469}%,{1100/655}%,{33500/469}%,{5000/655}%,#
 HTMLFONT=typ,DejaVu Sans,10,,#000000,CENTER
 ;typ
 HTMLTEXT="1-{(TYP)}",[TYP],{500/469}%,{5000/655}%,{34000/469}%,{3900/655}%,#FFFFFF,0,,100,typ
+;obrazek-font
+HTMLFONT=obrazek,DejaVu Sans,32,,#000000,CENTER
+;obrazek
+HTMLTEXT=,(OBRAZEK),{11300/469}%,{10600/655}%,{34300/469}%,{24700/655}%,#FFFFFF,0,,100,obrazek
 ;majitel-rect
 RECTANGLE=,{1500/469}%,{27900/655}%,{9000/469}%,{7400/655}%,#000000,EMPTY,0.5
 ;efekt-rect
@@ -70,6 +84,10 @@ HTMLTEXT="1-{(NAZEV)}",[NAZEV],{800/469}%,{1100/655}%,{33500/469}%,{5000/655}%,#
 HTMLFONT=typ,DejaVu Sans,10,,#000000,CENTER
 ;typ
 HTMLTEXT="1-{(TYP)}",[TYP],{500/469}%,{5000/655}%,{34000/469}%,{3900/655}%,#FFFFFF,0,,100,typ
+;obrazek-font
+HTMLFONT=obrazek,DejaVu Sans,32,,#000000,CENTER
+;obrazek
+HTMLTEXT=,(OBRAZEK),{11300/469}%,{10600/655}%,{34300/469}%,{24700/655}%,#FFFFFF,0,,100,obrazek
 ;efekt-rect
 RECTANGLE=,{-100/469}%,{36700/655}%,{47300/469}%,{21900/655}%,#000000,EMPTY,1
 ;efekt-font
@@ -116,12 +134,12 @@ RECTANGLE=,{35400/469}%,0%,{11500/469}%,{9500/655}%,#000000,EMPTY,1
 HTMLFONT=cena,DejaVu Sans,12,,#000000,LEFT
 ;cena-font
 HTMLTEXT="1-{(CENA)}",[CENA],{37200/469}%,{2000/655}%,{8100/469}%,{6000/655}%,#FFFFFF,0,,100,cena
+;obrazek-font
+HTMLFONT=obrazek,DejaVu Sans,32,,#000000,CENTER
+;obrazek
+HTMLTEXT=,(OBRAZEK),{11300/469}%,{10600/655}%,{34300/469}%,{24700/655}%,#FFFFFF,0,,100,obrazek
 ;majitel-rect
 RECTANGLE=,{1500/469}%,{27900/655}%,{9000/469}%,{7400/655}%,#000000,EMPTY,0.5
-;majitel-font
-HTMLFONT=majitel,DejaVu Sans,10,,#000000,LEFT
-;majitel
-HTMLTEXT="1-{(MAJITEL)}",[MAJITEL],{12600/469}%,{29100/655}%,{33100/469}%,{5300/655}%,#FFFFFF,0,,100,majitel
 ;efekt-rect
 RECTANGLE=,{-100/469}%,{36700/655}%,{47300/469}%,{21900/655}%,#000000,EMPTY,1
 ;efekt-font
