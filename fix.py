@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 
+import re
 import sys
 
-for line in sys.stdin:
-    fixed_line = ""
-    end_of_line = line.endswith("\r\n")
-    for char in line.strip():
-        if char == '\n':
-            fixed_line = fixed_line + '<br>'
-        if ord(char) < 128:
-            fixed_line = fixed_line + char
-        else:
-            fixed_line = fixed_line + "&#" + str(ord(char)) + ";"
-    if not end_of_line:
-        fixed_line = fixed_line + '<br>'
-    print(fixed_line, end='\n' if end_of_line else '')
+src = sys.stdin.read()
+
+src = re.sub(r'(?<!\r)\n', '<br>', src)
+
+def use_entity(match):
+    return "&#" + str(ord(match.group(0)[0])) + ";"
+
+src = re.sub(r'[\x80-\u10FFFF]', use_entity, src)
+
+print(src, end='')
