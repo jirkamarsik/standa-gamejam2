@@ -3,7 +3,7 @@
 import re
 import sys
 
-src = sys.stdin.read()
+src = open('Karty - List 1.csv', 'r').read()
 
 src = re.sub(r'(?<!\r)\n', '<br>', src)
 
@@ -12,4 +12,4 @@ def use_entity(match):
 
 src = re.sub(r'[\x80-\u10FFFF]', use_entity, src)
 
-print(src, end='')
+print(src, file=open('Karty-fixed.csv', 'w'), end='')
